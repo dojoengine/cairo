@@ -70,7 +70,7 @@ pub fn simulate<
             match libfunc {
                 EcConcreteLibfunc::TryNew(_) => {
                     take_inputs!(let [CoreValue::Felt252(x), CoreValue::Felt252(y)] = inputs);
-                    const BETA: Felt252 = Felt252::from_hex_unchecked(
+                    const BETA: Felt252 = Felt252::from_hex_unwrap(
                         "0x6f21413efbe40de150e596d72f7a8c5609ad26c15c915c1f4cdfcb99cee9e89",
                     );
                     // If the point is on the curve use the fallthrough branch and return the
